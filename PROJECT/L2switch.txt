@@ -1,0 +1,37 @@
+Switch>
+Switch>
+Switch>en
+Switch#
+Switch#conf
+Configuring from terminal, memory, or network [terminal]? 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#
+Switch(config)#
+Switch(config)#hostname Switch2-Branch
+Switch2-Branch(config)#vtp mode client
+Setting device to VTP CLIENT mode.
+Switch2-Branch(config)#vtp domain GamingHQ
+Changing VTP domain name from NULL to GamingHQ
+Switch2-Branch(config)#%SW_VLAN-6-VTP_DOMAIN_NAME_CHG: VTP domain name changed to GamingHQ.
+
+Switch2-Branch(config)#vtp password cisco
+Setting device VLAN database password to cisco
+Switch2-Branch(config)#interface fastethernet 0/1
+Switch2-Branch(config-if)#switchport mode trunk
+Switch2-Branch(config-if)#description Trunk_To_Branch_Router
+Switch2-Branch(config-if)#exit
+Switch2-Branch(config)#interface range fastethernet 0/2 - 9
+Switch2-Branch(config-if-range)#switchport mode access
+Switch2-Branch(config-if-range)#switchport access vlan 20
+Switch2-Branch(config-if-range)#description PUBG_PCs
+Switch2-Branch(config-if-range)#exut
+                                  ^
+% Invalid input detected at '^' marker.
+	
+Switch2-Branch(config-if-range)#exit
+Switch2-Branch(config)#interface range fastethernet 0/10 - 11
+Switch2-Branch(config-if-range)#switchport mode access
+Switch2-Branch(config-if-range)#switchport access vlan 40
+Switch2-Branch(config-if-range)#description 1v1_PCs
+Switch2-Branch(config-if-range)#exit
+Switch2-Branch(config)#

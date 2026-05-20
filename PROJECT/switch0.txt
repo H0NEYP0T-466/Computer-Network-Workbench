@@ -1,0 +1,50 @@
+Switch>
+Switch>en
+Switch#conf
+Configuring from terminal, memory, or network [terminal]? 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#hostname Switch0-Dist
+Switch0-Dist(config)#vtp mode server
+Device mode already VTP SERVER.
+Switch0-Dist(config)#vtp domain GamingHQ
+Changing VTP domain name from NULL to GamingHQ
+Switch0-Dist(config)#%SW_VLAN-6-VTP_DOMAIN_NAME_CHG: VTP domain name changed to GamingHQ.
+
+Switch0-Dist(config)#vtp password cisco
+Setting device VLAN database password to cisco
+Switch0-Dist(config)#vlan 10
+Switch0-Dist(config-vlan)#name local-admin
+Switch0-Dist(config-vlan)#exit
+Switch0-Dist(config)#vlan 20
+Switch0-Dist(config-vlan)#name pubg
+Switch0-Dist(config-vlan)#exit
+Switch0-Dist(config)#vlan 30
+Switch0-Dist(config-vlan)#name cs
+Switch0-Dist(config-vlan)#exit
+Switch0-Dist(config)#vlan 40
+Switch0-Dist(config-vlan)#name 1v1
+Switch0-Dist(config-vlan)#exi
+Switch0-Dist(config)#exit
+Switch0-Dist#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Switch0-Dist#conf
+Configuring from terminal, memory, or network [terminal]? 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch0-Dist(config)#interface fastethernet 0/1
+Switch0-Dist(config-if)#switchport mode trunk
+
+Switch0-Dist(config-if)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to up
+
+Switch0-Dist(config-if)#description Links_To_Floor_Switches
+Switch0-Dist(config-if)#exit
+Switch0-Dist(config)#interface fastethernet 0/2
+Switch0-Dist(config-if)#description Links_To_Floor_Switches
+Switch0-Dist(config-if)#exit
+Switch0-Dist(config)#interface fastethernet 0/3
+Switch0-Dist(config-if)#description Link_To_Router1-HQ
+Switch0-Dist(config-if)#exit
+Switch0-Dist(config)#

@@ -1,0 +1,37 @@
+Switch>
+Switch>
+Switch>en
+Switch#conf
+Configuring from terminal, memory, or network [terminal]? 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#hostname Switch2-Floor2
+Switch2-Floor2(config)#vtp mode client
+Setting device to VTP CLIENT mode.
+Switch2-Floor2(config)#vtp domain GamingHQ
+Changing VTP domain name from NULL to GamingHQ
+Switch2-Floor2(config)#%SW_VLAN-6-VTP_DOMAIN_NAME_CHG: VTP domain name changed to GamingHQ.
+
+Switch2-Floor2(config)#vtp password cisco
+Setting device VLAN database password to cisco
+Switch2-Floor2(config)#interface fastethernet 0/1
+Switch2-Floor2(config-if)#switchport mode trunk
+
+Switch2-Floor2(config-if)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to up
+
+Switch2-Floor2(config-if)#description Trunk_Backbone_To_Switch0
+Switch2-Floor2(config-if)#exit
+Switch2-Floor2(config)#interface range fastethernet 0/2 - 5
+Switch2-Floor2(config-if-range)#switchport mode access
+Switch2-Floor2(config-if-range)#switchport access vlan 30
+Switch2-Floor2(config-if-range)#description CS_PC
+Switch2-Floor2(config-if-range)#exit
+Switch2-Floor2(config)#interface range fastethernet 0/6-7
+Switch2-Floor2(config-if-range)#switchport mode access
+Switch2-Floor2(config-if-range)#switchport access vlan 40
+Switch2-Floor2(config-if-range)#description 1v1
+Switch2-Floor2(config-if-range)#exit
+Switch2-Floor2(config)#
+Switch2-Floor2(config)#

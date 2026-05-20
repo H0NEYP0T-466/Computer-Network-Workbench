@@ -1,0 +1,154 @@
+Switch>
+Switch>
+Switch>en
+Switch#conf
+Configuring from terminal, memory, or network [terminal]? 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#hostname Switch1-Floor1
+Switch1-Floor1(config)#
+Switch1-Floor1(config)#
+Switch1-Floor1(config)#vtp mode client
+Setting device to VTP CLIENT mode.
+Switch1-Floor1(config)#vtp domain GamingHQ
+Changing VTP domain name from NULL to GamingHQ
+Switch1-Floor1(config)#%SW_VLAN-6-VTP_DOMAIN_NAME_CHG: VTP domain name changed to GamingHQ.
+
+Switch1-Floor1(config)#vtp password cisco
+Setting device VLAN database password to cisco
+Switch1-Floor1(config)#
+Switch1-Floor1(config)#interface fastethernet 0/11
+Switch1-Floor1(config-if)#switchport mode trunk
+Switch1-Floor1(config-if)#description Trunk_Backbone_To_Switch0
+Switch1-Floor1(config-if)#exit
+Switch1-Floor1(config)#interface fastethernet 0/10
+Switch1-Floor1(config-if)#switchport mode access
+Switch1-Floor1(config-if)#switchport access vlan 10
+Switch1-Floor1(config-if)#description Local_Admin_PC
+Switch1-Floor1(config-if)#exit
+Switch1-Floor1(config)#interface range fastethernet 0/2 - 9
+Switch1-Floor1(config-if-range)#switchport mode access
+Switch1-Floor1(config-if-range)#
+Switch1-Floor1(config-if-range)#switchport access vlan 20
+Switch1-Floor1(config-if-range)#
+Switch1-Floor1(config-if-range)#description PUBG_Arena_PCs
+Switch1-Floor1(config-if-range)#exit
+Switch1-Floor1(config)#show vlan brief
+                        ^
+% Invalid input detected at '^' marker.
+	
+Switch1-Floor1(config)#exit
+Switch1-Floor1#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Switch1-Floor1#show vlan brief
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa0/1, Fa0/12, Fa0/13, Fa0/14
+                                                Fa0/15, Fa0/16, Fa0/17, Fa0/18
+                                                Fa0/19, Fa0/20, Fa0/21, Fa0/22
+                                                Fa0/23, Fa0/24, Gig0/1, Gig0/2
+10   local-admin                      active    Fa0/10
+20   pubg                             active    Fa0/2, Fa0/3, Fa0/4, Fa0/5
+                                                Fa0/6, Fa0/7, Fa0/8, Fa0/9
+30   cs                               active    
+40   1v1                              active    
+1002 fddi-default                     active    
+1003 token-ring-default               active    
+1004 fddinet-default                  active    
+1005 trnet-default                    active    
+Switch1-Floor1#
+Switch1-Floor1#
+
+
+
+
+
+
+
+
+Switch1-Floor1 con0 is now available
+
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+
+%LINK-3-UPDOWN: Interface FastEthernet0/1, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to down
+
+%LINK-5-CHANGED: Interface FastEthernet0/1, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to up
+
+%LINK-5-CHANGED: Interface FastEthernet0/12, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/12, changed state to up
+
+%LINK-5-CHANGED: Interface FastEthernet0/13, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/13, changed state to up
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch1-Floor1(config)#
+Switch1-Floor1(config)#exit
+Switch1-Floor1#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Switch1-Floor1#
+Switch1-Floor1#exit
+
+
+
+
+
+
+
+
+
+Switch1-Floor1 con0 is now available
+
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Switch1-Floor1>
+Switch1-Floor1>en
+Switch1-Floor1#conf
+Configuring from terminal, memory, or network [terminal]? 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch1-Floor1(config)#
+Switch1-Floor1(config)#interface range fastethernet 0/1, fastethernet 0/12 - 13
+Switch1-Floor1(config-if-range)#switchport mode access
+Switch1-Floor1(config-if-range)#switchport access vlan 50
+Switch1-Floor1(config-if-range)#description Retro-Arcade-Zone
+Switch1-Floor1(config-if-range)#exit
+Switch1-Floor1(config)#
