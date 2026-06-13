@@ -1,0 +1,106 @@
+name: Feature request
+description: Propose a new lab or enhancement
+title: "[Feature]: "
+labels: ["enhancement"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a new feature or lab! Please provide as much detail as possible to help us understand your proposal.
+
+  - type: dropdown
+    id: request-type
+    attributes:
+      label: Request Type
+      description: What type of feature are you requesting?
+      options:
+        - New Lab Exercise
+        - New Project
+        - Update Existing Lab
+        - Documentation Update
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem-statement
+    attributes:
+      label: Problem Statement
+      description: What problem are you trying to solve or what topic should be covered?
+      placeholder: "Describe the networking concept or skill that should be practiced..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed Solution
+      description: Describe your proposed lab or feature
+      placeholder: "Describe what the lab should include, what devices are needed, what topics it should cover..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: devices-needed
+    attributes:
+      label: Devices Needed
+      description: What networking devices would be required?
+      placeholder: |
+        - Routers: [e.g., 2911, 4321]
+        - Switches: [e.g., 2960, 3650]
+        - PCs: [e.g., 4 PCs]
+        - Other: [e.g., Servers, Access Points]
+
+  - type: dropdown
+    id: difficulty
+    attributes:
+      label: Difficulty Level
+      description: What difficulty level should this lab be?
+      options:
+        - Beginner
+        - Intermediate
+        - Advanced
+    validations:
+      required: true
+
+  - type: textarea
+    id: topics
+    attributes:
+      label: Networking Topics
+      description: What networking topics should this cover?
+      placeholder: |
+        - IP Addressing
+        - Subnetting
+        - Routing (static/dynamic)
+        - VLANs
+        - NAT
+        - ACLs
+        - etc.
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any other context, examples, or references
+      placeholder: "Links to similar labs, course materials, or documentation..."
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution
+      description: Are you willing to help implement this feature?
+      options:
+        - label: Yes, I can help create this lab
+        - label: I can help with testing
+        - label: I can help with documentation
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this feature request, you agree to follow our [Code of Conduct](./CODE_OF_CONDUCT.md)
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true

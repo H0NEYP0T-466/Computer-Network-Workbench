@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Discussions
+    url: https://github.com/H0NEYP0T-466/Computer-Network-Workbench/discussions
+    about: Please ask and answer questions here
+  - name: 🛡 Security Reporting
+    url: https://github.com/H0NEYP0T-466/Computer-Network-Workbench/blob/main/SECURITY.md
+    about: Please report security vulnerabilities here
+  - name: 📚 Cisco NetAcad
+    url: https://www.netacad.com/courses/packet-tracer
+    about: Download Packet Tracer and learn networking
